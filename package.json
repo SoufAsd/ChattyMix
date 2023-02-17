@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@sidebase/nuxt-auth": "^0.4.1",
+    "@types/node": "^18.13.0",
+    "@vicons/fa": "^0.12.0",
+    "naive-ui": "^2.34.3",
+    "nuxt": "^3.2.0",
+    "sass": "^1.58.2",
+    "vfonts": "^0.0.3"
+  },
+  "dependencies": {
+    "@css-render/vue3-ssr": "^0.15.12",
+    "eslint": "^8.34.0",
+    "unplugin-vue-components": "^0.24.0"
+  }
+}
