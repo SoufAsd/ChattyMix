@@ -1,11 +1,12 @@
 <template>
   <div class="background">
-    <NCard title="Login" class="login-form">
-      <NForm ref="formRef" :model="formValue">
+    <NCard class="login-form">
+      <NImage width="200" src="/img/logo.png" preview-disabled />
+      <NForm ref="formRef" :model="LoginRef" :rules="rules">
         <NSpace vertical>
-          <NFormItem label="Name" path="user.name">
+          <NFormItem label="Email" path="email">
             <NAutoComplete
-              v-model:value="value"
+              v-model:value="LoginRef.email"
               :input-props="{
                 autocomplete: 'disabled',
               }"
@@ -13,16 +14,18 @@
               placeholder="Email"
             />
           </NFormItem>
-          <NFormItem label="Name" path="user.name">
+          <NFormItem label="Password" path="password">
             <NInput
               type="password"
               show-password-on="mousedown"
+              v-model:value="LoginRef.password"
               placeholder="Password"
-              :maxlength="8"
             />
           </NFormItem>
           <NFormItem>
-            <NButton>login</NButton>
+            <NButton type="primary" @click="handleValidateClick"
+              >login</NButton
+            >
           </NFormItem>
         </NSpace>
       </NForm>
@@ -30,7 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FormInst, useMessage } from "naive-ui";
+import { FormInst, useMessage, FormRules } from "naive-ui";
 
 definePageMeta({ auth: false });
 
@@ -48,53 +51,45 @@ const LoginRef = ref<LoginType>({
 });
 const value = ref("");
 const formValue = ref({
-  user: {
-    name: "",
-    age: "",
-  },
-  phone: "",
+  email: "",
+  password: "",
 });
 const options = computed(() => {
   return ["@gmail.com", "@cloud.com", "@outlook.com"].map((suffix) => {
-    const prefix = value.value.split("@")[0];
+    const prefix = LoginRef.value.email?.split("@")[0];
     return {
       label: prefix + suffix,
       value: prefix + suffix,
     };
   });
 });
-// const message = useMessage();
-// const rules = {
-//   user: {
-//     name: {
-//       required: true,
-//       message: "Please input your name",
-//       trigger: "blur",
-//     },
-//     age: {
-//       required: true,
-//       message: "Please input your age",
-//       trigger: ["input", "blur"],
-//     },
-//   },
-//   phone: {
-//     required: true,
-//     message: "Please input your number",
-//     trigger: ["input"],
-//   },
-// };
+const message = useMessage();
+const rules: FormRules = {
+  password: [
+    {
+      required: true,
+      message: "Password is required",
+    },
+  ],
+  email: [
+    {
+      required: true,
+      message: "Email is required",
+    },
+  ],
+};
 
-// function handleValidateClick(e: MouseEvent) {
-//   e.preventDefault();
-//   formRef.value?.validate((errors) => {
-//     if (!errors) {
-//       message.success("Valid");
-//     } else {
-//       console.log(errors);
-//       message.error("Invalid");
-//     }
-//   });
-// }
+function handleValidateClick(e: MouseEvent) {
+  e.preventDefault();
+  formRef.value?.validate((errors) => {
+    if (!errors) {
+      message.success("Valid");
+    } else {
+      console.log(errors);
+      message.error("Invalid");
+    }
+  });
+}
 </script>
 <style lang="scss">
 @import "@/assets/sass/pages/login.sass";
