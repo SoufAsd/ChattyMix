@@ -8,5 +8,5 @@
 <script lang="ts" setup>
 import { NGrid, NGi, NCard, NButton } from "naive-ui";
 
-definePageMeta({ middleware: "auth" });
+// definePageMeta({ middleware: "auth" });
 </script>

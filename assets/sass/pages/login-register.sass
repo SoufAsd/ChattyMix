@@ -1,0 +1,74 @@
+@use '../variables/fonts'
+
+html
+    min-height: 100%
+
+body
+    background-image: linear-gradient(to left, #24d1dd, #00c1e6, #00afee, #009af0, #0083e9, #1177e5, #256ae0, #365dda, #455bdc, #5358dd, #6055de, #6c52df)
+    font-family: fonts.$montserrat
+
+.login-form
+    eight: 520px
+    width: 400px
+    background-color: rgba(255,255,255,0.13)
+    position: absolute
+    transform: translate(-50%,-50%)
+    top: 50%
+    left: 50%
+    border-radius: 10px
+    backdrop-filter: blur(10px)
+    border: 2px solid rgba(255,255,255,0.1)
+    box-shadow: 0 0 40px rgba(8,7,16,0.6)
+    padding: 50px 35px
+
+.logo
+    &.white
+        filter: brightness(0) invert(1)
+
+.button
+    align-items: center
+    appearance: none
+    background-color: #FCFCFD
+    border-radius: 4px
+    border-width: 0
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset
+    box-sizing: border-box
+    color: #36395A
+    cursor: pointer
+    display: inline-flex
+    height: 48px
+    justify-content: center
+    line-height: 1
+    list-style: none
+    overflow: hidden
+    padding-left: 16px
+    padding-right: 16px
+    position: relative
+    text-align: left
+    text-decoration: none
+    transition: box-shadow .15s,transform .15s
+    user-select: none
+    -webkit-user-select: none
+    touch-action: manipulation
+    white-space: nowrap
+    will-change: box-shadow,transform
+    font-size: 14px
+    &:focus
+        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset
+    &:hover
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset
+        background: #FCFCFD
+        transform: translateY(-2px)
+    &:active
+        box-shadow: #D6D6E7 0 3px 7px inset
+        transform: translateY(2px)
+
+// .switcher
+//     color: #fff
+//     font-size: 2.3em
+//     justify-content: center
+//     display: flex
+//     margin: 60px
+//     font-weight: bold
+//     cursor: pointer
+//     transition: .5s ease-in-out
