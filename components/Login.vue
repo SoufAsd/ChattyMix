@@ -1,5 +1,5 @@
 <template lang="">
-  <div>
+  <NSpace justify="center">
     <NImage
       width="200"
       src="/img/logo.png"
@@ -28,11 +28,15 @@
           />
         </NFormItem>
         <NFormItem>
-          <NButton class="button" @click="handleValidateClick">Sign in</NButton>
+          <NSpace justify="center">
+            <NButton class="button" @click="handleValidateClick"
+              >Sign in</NButton
+            >
+          </NSpace>
         </NFormItem>
       </NSpace>
     </NForm>
-  </div>
+  </NSpace>
 </template>
 <script lang="ts" setup>
 import { FormInst, useMessage, FormRules } from "naive-ui";
