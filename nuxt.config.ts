@@ -2,6 +2,21 @@ import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: "utf-16",
+      viewport:
+        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+      title: "ChattyMix",
+      meta: [{ name: "description", content: "ChattyMix discord clone." }],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Montserrat:400,800",
+        },
+      ],
+    },
+  },
   modules: ["@sidebase/nuxt-auth"],
   auth: {
     isEnabled: true,
@@ -34,6 +49,13 @@ export default defineNuxtConfig({
         process.env.NODE_ENV === "development"
           ? ["naive-ui", "vueuc", "date-fns-tz/esm/formatInTimeZone"]
           : [],
+    },
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@import "@/assets/variables.sass"',
+        },
+      },
     },
   },
 });
