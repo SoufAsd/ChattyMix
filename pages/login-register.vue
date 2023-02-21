@@ -7,7 +7,7 @@
         <NSpace justify="center">
           <NButton >Forgot Password</NButton>
           <NButton @click="handleSwitcherLoginRegister"
-            >Register</NButton
+            >{{switcherLabel}}</NButton
           >
         </NSpace>
       </template>
@@ -18,9 +18,11 @@
 definePageMeta({ auth: false });
 
 const switcher = ref(true);
+const switcherLabel = ref('Register');
 
 const handleSwitcherLoginRegister = (e: Event) => {
   switcher.value = !switcher.value;
+  switcher.value ? switcherLabel.value='Register' : switcherLabel.value='Login'
 };
 </script>
 <style lang="scss">

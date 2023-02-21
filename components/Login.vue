@@ -46,7 +46,7 @@ interface LoginType {
   password: string | null;
 }
 
-const { signIn } = useSession();
+const { signIn,status } = useSession();
 
 const formRef = ref<FormInst | null>(null);
 const LoginRef = ref<LoginType>({
