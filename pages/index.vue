@@ -1,12 +1,23 @@
 <template>
-  <NGrid :x-gap="12" :y-gap="12" :cols="4" layout-shift-disabled>
-    <NGi> </NGi>
-    <NGi :span="2"> </NGi>
-    <NGi> </NGi>
-  </NGrid>
+  <NSpace vertical>
+    <NGrid :cols="5" layout-shift-disabled>
+      <NGi>
+        <HomeLeftBar></HomeLeftBar>
+      </NGi>
+      <NGi :span="3">
+        <HomeCenterBar></HomeCenterBar>
+      </NGi>
+      <NGi>
+      <HomeRightBar></HomeRightBar>  
+      </NGi>
+    </NGrid>
+  </NSpace>
 </template>
 <script lang="ts" setup>
 import { NGrid, NGi, NCard, NButton } from "naive-ui";
 
 // definePageMeta({ middleware: "auth" });
 </script>
+<style lang="scss">
+@import '@/assets/sass/main.sass'
+</style>
