@@ -53,7 +53,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         sass: {
-          additionalData: '@import "@/assets/variables.sass"',
+          additionalData: ['@import "@/assets/variables.sass"',"@import simplebar/dist/simplebar.min.css"]
         },
       },
     },

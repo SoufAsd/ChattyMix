@@ -11,6 +11,7 @@
     "@sidebase/nuxt-auth": "^0.4.1",
     "@types/node": "^18.13.0",
     "@vicons/fa": "^0.12.0",
+    "@vicons/fluent": "^0.12.0",
     "naive-ui": "^2.34.3",
     "nuxt": "^3.2.0",
     "sass": "^1.58.2",
@@ -20,6 +21,7 @@
     "@css-render/vue3-ssr": "^0.15.12",
     "eslint": "^8.34.0",
     "firebase": "^9.17.1",
+    "simplebar-vue": "^2.3.0",
     "unplugin-vue-components": "^0.24.0"
   }
 }

@@ -1,8 +1,10 @@
 <template lang="">
   <div class="side">
-        <NGrid :cols="4" layout-shift-disabled>
+        <NGrid :cols="4" item-responsive responsive="screen">
           <NGi>
-            <div class="servers"></div>
+            <div class="servers">
+              <ServersMain></ServersMain>
+            </div>
           </NGi>
           <NGi :span="3">
             <div class="sections"></div>
